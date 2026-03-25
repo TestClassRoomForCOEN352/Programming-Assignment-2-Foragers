@@ -29,7 +29,6 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: TestClassRoomForCOEN352/Foragers_TeachersCopy   # ← replace with your repo
-          token: ${{ secrets.FORAGER_ENGINE }}
           path: engine
 
       # 3. Set up Java
