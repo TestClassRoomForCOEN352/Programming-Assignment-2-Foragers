@@ -28,8 +28,8 @@ jobs:
       - name: Checkout teacher engine (private)
         uses: actions/checkout@v4
         with:
-          repository: your-org/teacher-engine   # ← replace with your repo
-          token: ${{ secrets.ENGINE_ACCESS_TOKEN }}
+          repository: TestClassRoomForCOEN352/Foragers_TeachersCopy   # ← replace with your repo
+          token: ${{ secrets.FORAGER_ENGINE }}
           path: engine
 
       # 3. Set up Java
@@ -43,10 +43,10 @@ jobs:
       #    Everything else (bosses, engine, map) comes from the teacher repo.
       - name: Inject student players into engine
         run: |
-          cp student/src/main/java/org/concordia/Player1.java \
-             engine/src/main/java/org/concordia/Player1.java
-          cp student/src/main/java/org/concordia/Player2.java \
-             engine/src/main/java/org/concordia/Player2.java
+          cp student/Foragers/src/main/java/org/concordia/Player1.java \
+             engine/Foragers/src/main/java/org/concordia/Player1.java
+          cp student/Foragers/src/main/java/org/concordia/Player2.java \
+             engine/Foragers/src/main/java/org/concordia/Player2.java
 
       # 5. Compile the entire engine + student players in one javac call.
       #    All .java files are compiled together so the student's classes
